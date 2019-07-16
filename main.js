@@ -8,7 +8,7 @@ const myButton = document.getElementById('myButton');
 const myTextInput = document.getElementById('myTextInput');
 const myList = document.getElementsByTagName('li');
 const errorNotGreen = document.getElementsByClassName('error-not-purple');
-
+const odd = document.querySelectorAll('li:nth-child(odd)');
 
 // Adding and event listener, telling what to look for, then telling
 myButton.addEventListener('click', () => {
@@ -20,5 +20,9 @@ for (let i = 0; i < myList.length; i += 1) {
 }
 
 for (let i = 0; i < errorNotGreen.length; i += 1) {
-errorNotGreen[i].style.color = 'purple';
+  errorNotGreen[i].style.color = 'purple';
+}
+
+for (let i = 0; i < odd.length; i += 1) {
+  odd[i].style.backgroundColor = 'grey';
 }
