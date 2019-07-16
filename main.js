@@ -14,5 +14,5 @@ myButton.addEventListener('click', () => {
 })
 
 for (let i = 0; i < myList.length; i += 1) {
-  myList[i].style.color = 'purple';
+  myList[i].style.color = 'green';
 }
