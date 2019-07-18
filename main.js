@@ -6,6 +6,8 @@ const descriptionButton = document.querySelector('button.description');
 const addItemInput = document.querySelector('input.addItemInput');
 const addItemButton = document.querySelector('button.addItemButton');
 
+
+// add an event listener that can show or hide the list.
 toggleList.addEventListener('click', () => {
   if (listDiv.style.display == "none") {
     toggleList.textContent = 'Show List';
@@ -16,10 +18,14 @@ toggleList.addEventListener('click', () => {
   }
 });
 
+
+// add an event listenever that changes what the list description says.
 descriptionButton.addEventListener('click', () => {
   descriptionP.innerHTML = descriptionInput.value + ':';
 });
 
+
+// add an event listener that creates an li element and add the value from the input next to the add item button.
 addItemButton.addEventListener('click', () => {
   let li = document.createElement('li');
   li.textContent = addItemInput.value;
