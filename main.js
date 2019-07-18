@@ -22,11 +22,15 @@ toggleList.addEventListener('click', () => {
 // add an event listenever that changes what the list description says.
 descriptionButton.addEventListener('click', () => {
   descriptionP.innerHTML = descriptionInput.value + ':';
+  descriptionInput.value = '';
 });
 
 
 // add an event listener that creates an li element and add the value from the input next to the add item button.
 addItemButton.addEventListener('click', () => {
+  let ul = document.getElementsByTagName('ul')[0];
   let li = document.createElement('li');
   li.textContent = addItemInput.value;
+  ul.appendChild(li);
+  addItemInput.value = '';
 });
