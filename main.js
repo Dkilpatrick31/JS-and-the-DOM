@@ -7,6 +7,14 @@ const addItemInput = document.querySelector('input.addItemInput');
 const addItemButton = document.querySelector('button.addItemButton');
 const removeItemButton = document.querySelector('button.removeItemButton');
 
+  // listDiv.addEventListener('mouseover', (event) => {
+  //   if (event.target.tagName == "BUTTON") {
+  //     let li = event.target;
+  //     let ul = li.parentNode;
+  //     ul.removeChild(li);
+  //   }
+  // });
+
   listDiv.addEventListener('mouseover', (event) => {
     if (event.target.tagName == "LI") {
       event.target.textContent = event.target.textContent.toUpperCase();
@@ -18,6 +26,7 @@ const removeItemButton = document.querySelector('button.removeItemButton');
       event.target.textContent = event.target.textContent.toLowerCase();
     }
   });
+
 // add an event listener that can show or hide the list.
 toggleList.addEventListener('click', () => {
   if (listDiv.style.display == "none") {
