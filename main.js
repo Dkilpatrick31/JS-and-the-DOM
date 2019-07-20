@@ -1,19 +1,37 @@
-const myList = document.getElementsByTagName('li');
-const errorNotPurple = document.getElementsByClassName('error-not-purple');
-const evens = document.querySelectorAll('li:nth-child(odd)');
+const toggleList = document.getElementById('toggleList');
+const list = document.querySelector('.list');
+const input = document.querySelector('input.description');
+const p = document.querySelector('p.description');
+const button = document.querySelector('button.description');
 
-for (let i = 0; i < myList.length; i += 1) {
-  myList[i].style.color = 'red';
-}
+toggleList.addEventListener('click', () => {
+  if (list.style.display == 'none') {
+    toggleList.textContent = 'Hide List';
+    list.style.display = 'block';
+  } else {
+    toggleList.textContent = 'Show List';
+    list.style.display = 'none';
+  }
+});
 
-for (let i = 0; i < errorNotPurple.length; i += 1) {
-  errorNotPurple[i].style.color = 'blue';
-}
+button.addEventListener('click', () => {
+  p.textContent = input.value + ':';
+});
 
-for (let i = 0; i < evens.length; i += 1) {
-  evens[i].style.backgroundColor = 'lightgray';
-}
 
+
+// for (let i = 0; i < myList.length; i += 1) {
+//   myList[i].style.color = 'red';
+// }
+//
+// for (let i = 0; i < errorNotPurple.length; i += 1) {
+//   errorNotPurple[i].style.color = 'blue';
+// }
+//
+// for (let i = 0; i < evens.length; i += 1) {
+//   evens[i].style.backgroundColor = 'lightgray';
+// }
+//
 
 
 
