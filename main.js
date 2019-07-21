@@ -1,8 +1,12 @@
 const toggleList = document.getElementById('toggleList');
 const list = document.querySelector('.list');
-const input = document.querySelector('input.description');
-const p = document.querySelector('p.description');
-const button = document.querySelector('button.description');
+const descriptionInput = document.querySelector('input.description');
+const descriptionP = document.querySelector('p.description');
+const descriptionButton = document.querySelector('button.description');
+const addItemInput = document.querySelector('input.addItemInput');
+const addItemButton = document.querySelector('button.addItemButton');
+const removeItemButton = document.querySelector('button.removeItemButton');
+
 
 toggleList.addEventListener('click', () => {
   if (list.style.display == 'none') {
@@ -14,11 +18,24 @@ toggleList.addEventListener('click', () => {
   }
 });
 
-button.addEventListener('click', () => {
-  p.textContent = input.value + ':';
+descriptionButton.addEventListener('click', () => {
+  descriptionP.textContent = descriptionInput.value + ':';
+  descriptionInput.value = '';
 });
 
+addItemButton.addEventListener('click', () => {
+  let ul = document.getElementsByTagName('ul')[0];
+  let li = document.createElement('li');
+  li.textContent = addItemInput.value;
+  ul.appendChild(li);
+  addItemInput.value = '';
+});
 
+removeItemButton.addEventListener('click', () => {
+  let ul = document.getElementsByTagName('ul')[0];
+  let li = document.querySelector('li:last-child');
+  ul.removeChild(li);
+});
 
 // for (let i = 0; i < myList.length; i += 1) {
 //   myList[i].style.color = 'red';
